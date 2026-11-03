@@ -1,0 +1,57 @@
+name: Deploy GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ['Update mathematics papers', 'Check mathematics AI disclosures', 'Restore Math Daily frontend']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' || (github.event.workflow_run.name == 'Update mathematics papers' && github.event.workflow_run.conclusion == 'failure')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check release
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          for file in *.js; do node --check "$file"; done
+          node tests/test_reader_tools.cjs
+          python scripts/validate_math_release.py
+      - uses: actions/configure-pages@v5
+      - name: Package standalone static site
+        run: python scripts/build_site.py
+      - name: Check built release
+        run: python scripts/validate_math_release.py --root _site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Preserve successful release revision
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-daily-successful-release
+          path: _site/release.txt
+          retention-days: 90
+      - name: Record successful deployment
+        run: echo "Successfully deployed Math Daily revision $(git rev-parse HEAD)." >> "$GITHUB_STEP_SUMMARY"
