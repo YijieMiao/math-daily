@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html *.js *.css assets content
+          git add -A -- index.html '*.js' '*.css' assets content
           if ! git diff --cached --quiet; then
             git commit -m 'Restore reviewed Math Daily frontend (preserve archives)'
             git pull --rebase origin main
