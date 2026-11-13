@@ -1,0 +1,35 @@
+page { background: #f6f3ec; color: #23392f; padding-bottom: 42rpx; font-size: 28rpx; }
+.hero { padding: 24rpx 32rpx 18rpx; }
+.eyebrow, .meta { color: #526c5b; font-size: 23rpx; letter-spacing: 2rpx; }
+.headline { font-family: Georgia, serif; font-size: 72rpx; margin: 12rpx 0; }
+.muted { color: #58665f; font-size: 25rpx; line-height: 1.6; }
+.filters { margin: 0 26rpx 20rpx; }
+.search { background: white; border: 1rpx solid #d7dfd6; border-radius: 14rpx; height: 82rpx; padding: 0 20rpx; }
+.controls, .detail-actions, .tags { display: flex; flex-wrap: wrap; gap: 12rpx; }
+.controls { margin-top: 16rpx; }
+.chip { display: block; padding: 10rpx 16rpx; border-radius: 10rpx; background: #e3ebe2; color: #23392f; font-size: 24rpx; line-height: 1.5; margin: 0; }
+.selected { color: white; background: #315e4a; }
+.card { display: block; margin: 16rpx 26rpx; padding: 24rpx; border-radius: 14rpx; background: #fffdfa; border: 1rpx solid #e1e1d6; }
+.paper-title { font-family: Georgia, serif; font-size: 34rpx; line-height: 1.38; margin: 10rpx 0; }
+.detail-title { font-size: 42rpx; }
+.authors { margin-bottom: 12rpx; }
+.tags text { padding: 4rpx 10rpx; border-radius: 6rpx; background: #edf0e8; color: #415c4a; font-size: 22rpx; }
+.notice, .result { padding: 20rpx 32rpx; }
+.more { margin: 24rpx 26rpx; }
+.detail-actions { margin: 22rpx 26rpx; }
+.detail-actions button { margin: 0; }
+.section-title { font-size: 31rpx; font-weight: bold; margin-bottom: 14rpx; }
+.abstract { line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+
+.offline-note { display: flex; align-items: center; justify-content: space-between; gap: 12rpx; margin: 0 26rpx; padding: 12rpx 16rpx; border-radius: 10rpx; background: #e3ebe2; color: #405c4e; font-size: 23rpx; }
+.offline-note button { margin: 0; flex-shrink: 0; }
+.subject-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8rpx; margin-top: 14rpx; padding: 12rpx; background: #fffdfa; border-radius: 14rpx; }
+.subject-option { display: flex; align-items: center; min-height: 54rpx; font-size: 24rpx; }
+.subject-option checkbox { transform: scale(.72); }
+.audit-summary { margin: 0 26rpx 16rpx; padding: 12rpx 18rpx; border-left: 4rpx solid #8ea794; }
+.audit-label { display: inline-block; margin-bottom: 10rpx; font-size: 22rpx; color: #58665f; background: #edf0e8; border-radius: 6rpx; padding: 4rpx 10rpx; }
+.audit-label.explicit { background: #d9eadf; color: #24563d; }
+.audit-label.candidate { background: #f4e8cf; color: #6a471a; }
+.audit-excerpt { margin: 12rpx 0; padding-left: 14rpx; border-left: 3rpx solid #8ea794; line-height: 1.55; }
+
+.pdf-button { display: inline-block; margin-top: 16rpx; }

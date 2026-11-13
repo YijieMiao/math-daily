@@ -1,0 +1,13 @@
+<view class="trend">
+  <view class="title">{{weekly ? '每周' : '每日'}}{{ai ? ' AI 披露占比' : '发文趋势'}}</view>
+  <view class="controls">
+    <button size="mini" bindtap="period">{{weekly ? '按日查看' : '按周查看'}}</button>
+    <button size="mini" bindtap="metric">{{ai ? '查看发文量' : '查看 AI 披露占比'}}</button>
+  </view>
+  <view class="controls">
+    <button wx:for="{{legend}}" wx:key="code" size="mini" bindtap="toggle" data-code="{{item.code}}" class="{{item.enabled ? '' : 'disabled'}}" style="color:{{item.color}}">{{item.code}}</button>
+  </view>
+  <canvas wx:if="{{summary}}" type="2d" class="plot" aria-label="{{summary}}" />
+  <view wx:if="{{summary}}" class="note">{{summary}}</view>
+  <view class="note">{{!days.length ? '趋势数据暂不可用' : !summary ? '请选择要显示的研究方向' : ai ? '分母为该方向已归档的新论文与交叉投稿。无已核查数据时留空。' : '统计新论文与交叉投稿，缺失日期不补零。'}}</view>
+</view>

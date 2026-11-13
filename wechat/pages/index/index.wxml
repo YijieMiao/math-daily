@@ -1,0 +1,34 @@
+<view class="hero">
+  <view class="section-title">数学论文</view>
+  <view class="muted">{{date ? '公告批次 ' + date : 'arXiv 数学'}}</view>
+</view>
+<view class="filters">
+  <input class="search" placeholder="搜索标题、作者、摘要或 arXiv 编号" value="{{query}}" bindinput="search" />
+  <view class="controls">
+    <picker range="{{batchLabels}}" value="{{batchIndex}}" bindchange="selectBatch"><view class="chip">{{batchLabels[batchIndex]}} ▾</view></picker>
+    <button size="mini" class="chip" bindtap="editSubjects">研究方向 {{subjects.length}} 个 {{editingSubjects ? '▴' : '▾'}}</button>
+    <picker range="{{aiLabels}}" value="{{aiIndex}}" bindchange="selectAI"><view class="chip">{{aiLabels[aiIndex]}} ▾</view></picker>
+    <button size="mini" class="chip {{savedOnly ? 'selected' : ''}}" bindtap="toggleSaved">收藏</button>
+    <button size="mini" class="chip" bindtap="showTrends" wx:if="{{date}}">趋势 ↓</button>
+  </view>
+  <checkbox-group wx:if="{{editingSubjects}}" class="subject-options" bindchange="changeSubjects">
+    <label wx:for="{{subjectOptions}}" wx:key="code" class="subject-option"><checkbox value="{{item.code}}" checked="{{item.selected}}" color="#315e4a" />{{item.code}}</label>
+  </checkbox-group>
+</view>
+<view wx:if="{{loading}}" class="notice">正在读取论文…</view>
+<view wx:elif="{{error}}" class="notice">{{error}}<button size="mini" bindtap="retry">重试</button></view>
+<block wx:else>
+  <view wx:if="{{offline}}" class="offline-note">正在显示内置的 {{date}} 批次<button size="mini" bindtap="retry">检查更新</button></view>
+  <view class="muted result">{{count}} 篇{{savedOnly ? '收藏 · 当前批次' : '论文'}}</view>
+  <view class="audit-summary muted">AI 使用声明 {{explicit}} / {{auditTotal}} 篇 · {{percent}}<view>已完成文字检索 {{checked}} / {{auditTotal}} 篇 · 按 AI 状态筛选前统计</view></view>
+  <view wx:for="{{rows}}" wx:key="id" class="card" data-id="{{item.id}}" bindtap="openPaper">
+    <view class="meta">{{item.id}} · {{item.revision ? '修订' : '新论文'}}</view>
+    <view class="paper-title"><math-text value="{{item.title}}" font-size="{{34}}" /></view>
+    <view class="audit-label {{item.aiStatus}}">{{item.aiLabel}}</view>
+    <view class="muted authors">{{item.authors}}</view>
+    <view class="tags"><text wx:for="{{item.feeds}}" wx:for-item="code" wx:key="*this">{{code}}</text></view>
+  </view>
+  <view wx:if="{{!count}}" class="notice">{{subjects.length ? '当前筛选没有匹配论文' : '请选择至少一个研究方向'}}</view>
+  <button wx:if="{{more}}" class="more" bindtap="loadMore">加载更多</button>
+  <view id="trends"><trend-chart days="{{trendDays}}" subjects="{{subjects}}" /></view>
+</block>

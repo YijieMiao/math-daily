@@ -1,0 +1,30 @@
+<view wx:if="{{loading}}" class="notice">正在读取论文…</view>
+<view wx:elif="{{error}}" class="notice">{{error}}<button size="mini" bindtap="load">重试</button></view>
+<block wx:elif="{{paper}}">
+  <view class="hero">
+    <view class="meta">arXiv:{{paper.id}}</view>
+    <view class="paper-title detail-title"><math-text value="{{paper.title}}" font-size="{{42}}" /></view>
+    <view class="muted authors" user-select>{{paper.authors}}</view>
+    <view class="tags"><text wx:for="{{paper.categories}}" wx:key="*this">{{item}}</text></view>
+    <button wx:if="{{paper.pdf}}" size="mini" class="chip selected pdf-button" bindtap="openPdf" loading="{{openingPdf}}" disabled="{{openingPdf}}">{{openingPdf ? '正在下载 PDF' : '打开 PDF'}}</button>
+  </view>
+  <view class="card">
+    <view class="section-title">摘要</view>
+    <view class="abstract"><math-text value="{{paper.abstract}}" /></view>
+  </view>
+  <view wx:if="{{audit}}" class="card">
+    <view class="section-title">AI 披露</view>
+    <view class="audit-label {{audit.status}}">{{audit.label}}</view>
+    <view wx:if="{{audit.version_id}}" class="muted">{{audit.version_id}} · {{audit.method === 'html' ? 'HTML 全文' : audit.method === 'pdf' ? 'PDF 全文' : '全文提取未完成'}}</view>
+    <view wx:if="{{audit.excerpt}}" class="audit-excerpt" user-select>{{audit.excerpt}}</view>
+    <view wx:if="{{audit.status === 'not_found'}}" class="muted">全文文字检索未发现披露，实际使用情况未知。</view>
+    <view wx:if="{{audit.status === 'candidate'}}" class="muted">原文可能只是提及 AI，请结合上下文判断。</view>
+    <button wx:if="{{audit.source_url}}" size="mini" class="chip" bindtap="copyAudit">复制核查来源</button>
+  </view>
+  <view class="detail-actions">
+    <button size="mini" bindtap="toggleSaved">{{saved ? '取消收藏' : '收藏'}}</button>
+    <button size="mini" open-type="share">分享</button>
+    <button size="mini" bindtap="copyArxiv">复制 arXiv 链接</button>
+    <button size="mini" bindtap="copyWeb">复制网页版链接</button>
+  </view>
+</block>

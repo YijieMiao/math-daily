@@ -1,0 +1,1 @@
+<block wx:for="{{parts}}" wx:key="index"><image wx:if="{{item.src}}" class="formula {{item.display ? 'display' : ''}}" src="{{item.src}}" style="{{item.style}}" aria-label="{{item.text}}" data-index="{{index}}" binderror="imageError" /><text wx:else>{{item.text}}</text></block>

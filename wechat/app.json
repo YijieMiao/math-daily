@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/paper/paper"
+  ],
+  "window": {
+    "navigationBarTitleText": "Math Daily",
+    "navigationBarBackgroundColor": "#f6f3ec",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f3ec"
+  },
+  "sitemapLocation": "sitemap.json",
+  "subPackages": [
+    {
+      "root": "formulas",
+      "pages": [
+        "loader"
+      ]
+    }
+  ]
+}
