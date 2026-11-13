@@ -4,6 +4,8 @@ const dataBase = base + 'data/';
 const snapshot = require('./snapshot');
 const extras = require('./snapshot-extras');
 const batches = new Map();
+const localArchive = require('./archive-local');
+const { gunzipSync, strFromU8 } = require('./vendor/inflate');
 let remoteRecords;
 
 function aiRecords(offline) {
@@ -44,19 +46,36 @@ function request(path) {
   });
 }
 
+async function archive() {
+  try {
+    const index = await request('archive.json');
+    if (Array.isArray(index) && index.length) return index;
+  } catch {}
+  return localArchive.index;
+}
+
+function cacheBatch(data) {
+  batches.set(data.date, data);
+  if (batches.size > 3) batches.delete(batches.keys().next().value);
+  return data;
+}
+
 async function batch(date) {
   if (date && batches.has(date)) return batches.get(date);
   try {
     const data = await request(date ? 'archive/' + date + '.json' : 'latest.json');
     if (!Array.isArray(data.papers) || !data.date) throw new Error('论文数据格式不正确');
-    batches.set(data.date, data);
-    if (batches.size > 5) batches.delete(batches.keys().next().value);
-    return data;
+    return cacheBatch(data);
   } catch (error) {
-    if (date && date !== snapshot.date) throw error;
-    const fallback = { ...snapshot, offline: true };
-    batches.set(snapshot.date, fallback);
-    return fallback;
+    if (!date || date === snapshot.date) {
+      return cacheBatch({ ...snapshot, offline: true, records: extras.records });
+    }
+    const load = localArchive.loaders[date];
+    if (!load) throw error;
+    const payload = await load();
+    const bytes = new Uint8Array(wx.base64ToArrayBuffer(payload));
+    const local = JSON.parse(strFromU8(gunzipSync(bytes)));
+    return cacheBatch({ ...local.batch, offline: true, records: local.records });
   }
 }
 
@@ -76,4 +95,4 @@ function favorites() {
   return Array.isArray(saved) ? saved : [];
 }
 
-module.exports = { base, request, batch, paperText, normalize, favorites, aiRecords, aiLabels, audit, trends };
+module.exports = { base, request, archive, batch, paperText, normalize, favorites, aiRecords, aiLabels, audit, trends };

@@ -22,7 +22,7 @@ Page({
         saved: api.favorites().includes(this.id),
         audit: api.audit(paper, this.date, {})
       });
-      api.aiRecords(data.offline).then(records => this.setData({ audit: api.audit(paper, this.date, records) }));
+      (data.records ? Promise.resolve(data.records) : api.aiRecords(data.offline)).then(records => this.setData({ audit: api.audit(paper, this.date, records) }));
     } catch (error) {
       this.setData({ error: '无法读取这篇论文，请重试。' });
     } finally {

@@ -16,6 +16,48 @@
       "pages": [
         "loader"
       ]
+    },
+    {
+      "root": "history-1",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-2",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-3",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-4",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-5",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-6",
+      "pages": [
+        "loader"
+      ]
+    },
+    {
+      "root": "history-7",
+      "pages": [
+        "loader"
+      ]
     }
   ]
 }

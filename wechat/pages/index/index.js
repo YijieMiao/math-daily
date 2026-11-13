@@ -19,11 +19,11 @@ Page({
     this.loadArchive();
   },
   loadArchive() {
-    api.request('archive.json').then(batches => {
-      if (Array.isArray(batches)) {
-        this.setData({ batches, batchLabels: ['最新公告', ...batches.map(item => item.date)] });
-      }
-    }).catch(() => {});
+    api.archive().then(batches => {
+      const selected = this.data.batches[this.data.batchIndex - 1];
+      const batchIndex = selected ? batches.findIndex(item => item.date === selected.date) + 1 : 0;
+      this.setData({ batches, batchIndex, batchLabels: ['最新公告', ...batches.map(item => item.date)] });
+    });
   },
   onShow() { if (this.papers) this.filter(); },
   async load(index) {
@@ -41,7 +41,7 @@ Page({
       }));
       this.setData({ date: data.date, offline: !!data.offline });
       this.filter();
-      api.aiRecords(data.offline).then(records => {
+      (data.records ? Promise.resolve(data.records) : api.aiRecords(data.offline)).then(records => {
         if (sequence !== this.sequence) return;
         this.papers.forEach((p, i) => { p.audit = api.audit(data.papers[i], data.date, records); });
         this.filter(this.data.rows.length || pageSize);
