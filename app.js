@@ -21,7 +21,17 @@ function persist() {
 }
 $('authors').value = personal.authors.join('\n');
 function toggle(key, id) { personal={...personal,[key]: personal[key].includes(id) ? personal[key].filter(x => x !== id) : [...personal[key], id]}; persist(); render(); if(sharedPaper)showSharedPaper(sharedPaper); }
-function normalize(value) { return value.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[{}\\$]/g,'').toLowerCase(); }
+// arXiv metadata may use TeX accents in ordinary prose as well as math.
+function paperText(value) {
+  const accents = {"'": '\u0301', '`': '\u0300', '"': '\u0308', '^': '\u0302', '~': '\u0303', '=': '\u0304', '.': '\u0307', c: '\u0327', v: '\u030c'};
+  const math = /(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\[\s\S]|[^$\\])*\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\])/;
+  return value.split(math).map((part, i) => i % 2 ? part : part.replace(
+    /\{\\(['`"^~=.]|[cv])\s*(?:\{([A-Za-z])\}|([A-Za-z]))\}|\\(['`"^~=.]|[cv](?=[\s{]))\s*(?:\{([A-Za-z])\}|([A-Za-z]))/g,
+    (_, groupedAccent, groupedBraced, groupedLetter, accent, braced, letter) =>
+      ((groupedBraced || groupedLetter || braced || letter) + accents[groupedAccent || accent]).normalize('NFC')
+  )).join('');
+}
+function normalize(value) { return paperText(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[{}\\$]/g,'').toLowerCase(); }
 function followed(paper) { return personal.authors.some(author => normalize(paper.authors).includes(normalize(author))); }
 function subjects() {
   $('subjects').replaceChildren();
@@ -78,14 +88,15 @@ function createPaper(p) {
     if (p.occurrences?.length) meta.append(element('span', p.occurrences[0].date));
     for (const c of p.categories) meta.append(element('span', c, 'tag'));
     if (followed(p)) meta.append(element('span', '关注作者', 'tag interest'));
-    const title = element('h3'); title.append(link(p.title, p.url));
+    const titleText = paperText(p.title);
+    const title = element('h3'); title.append(link(titleText, p.url));
     const links = element('div', undefined, 'links'); links.append(link('arXiv ↗', p.url), link('PDF ↗', p.pdf));
-    const saved = button(personal.saved.includes(p.id) ? '★ 已收藏' : '☆ 收藏', () => toggle('saved', p.id)); saved.setAttribute('aria-pressed', String(personal.saved.includes(p.id))); saved.setAttribute('aria-label', `收藏：${p.title}`);
-    const read = button(personal.read.includes(p.id) ? '✓ 已读' : '标记已读', () => toggle('read', p.id)); read.setAttribute('aria-pressed', String(personal.read.includes(p.id))); read.setAttribute('aria-label', `已读：${p.title}`);
+    const saved = button(personal.saved.includes(p.id) ? '★ 已收藏' : '☆ 收藏', () => toggle('saved', p.id)); saved.setAttribute('aria-pressed', String(personal.saved.includes(p.id))); saved.setAttribute('aria-label', `收藏：${titleText}`);
+    const read = button(personal.read.includes(p.id) ? '✓ 已读' : '标记已读', () => toggle('read', p.id)); read.setAttribute('aria-pressed', String(personal.read.includes(p.id))); read.setAttribute('aria-label', `已读：${titleText}`);
     const share=button('分享',async()=>{await shareURL(MathReader.cleanLink(location.href,{paper:p.id}));share.textContent='分享链接已生成';});
-    share.setAttribute('aria-label',`分享：${p.title}`);
+    share.setAttribute('aria-label',`分享：${titleText}`);
     links.append(saved, read, share);
-    const details = element('details'), abstract = element('p', p.abstract, 'abstract'); details.append(element('summary', '展开英文摘要'), abstract);
+    const details = element('details'), abstract = element('p', paperText(p.abstract), 'abstract'); details.append(element('summary', '展开英文摘要'), abstract);
     details.addEventListener('toggle', () => { if (details.open && window.MathJax?.typesetPromise) window.MathJax.typesetPromise([abstract]).catch(console.error); });
     article.append(meta, title, element('p', p.authors, 'authors'), links);
     article.append(details);
