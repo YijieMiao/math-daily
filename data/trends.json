@@ -76,9 +76,9 @@
           "new": 110,
           "revised": 64,
           "explicit": 46,
-          "checked": 169,
+          "checked": 168,
           "new_explicit": 36,
-          "new_checked": 107
+          "new_checked": 106
         },
         "math.DG": {
           "total": 35,
@@ -112,9 +112,9 @@
           "new": 48,
           "revised": 23,
           "explicit": 19,
-          "checked": 69,
+          "checked": 68,
           "new_explicit": 15,
-          "new_checked": 46
+          "new_checked": 45
         },
         "math.KT": {
           "total": 3,
@@ -144,9 +144,9 @@
           "new": 779,
           "revised": 559,
           "explicit": 153,
-          "checked": 557,
+          "checked": 555,
           "new_explicit": 121,
-          "new_checked": 422
+          "new_checked": 420
         },
         "math.AC": {
           "total": 34,
@@ -171,9 +171,9 @@
           "new": 105,
           "revised": 51,
           "explicit": 37,
-          "checked": 152,
+          "checked": 151,
           "new_explicit": 29,
-          "new_checked": 101
+          "new_checked": 100
         },
         "math.AT": {
           "total": 29,
@@ -225,18 +225,18 @@
           "new": 58,
           "revised": 39,
           "explicit": 26,
-          "checked": 93,
+          "checked": 92,
           "new_explicit": 20,
-          "new_checked": 57
+          "new_checked": 56
         },
         "math.DS": {
           "total": 87,
           "new": 52,
           "revised": 35,
           "explicit": 9,
-          "checked": 39,
+          "checked": 38,
           "new_explicit": 6,
-          "new_checked": 30
+          "new_checked": 29
         },
         "math.FA": {
           "total": 72,
@@ -378,9 +378,9 @@
           "new": 72,
           "revised": 51,
           "explicit": 13,
-          "checked": 49,
+          "checked": 48,
           "new_explicit": 10,
-          "new_checked": 40
+          "new_checked": 39
         },
         "math.QA": {
           "total": 23,
@@ -423,9 +423,9 @@
           "new": 11,
           "revised": 10,
           "explicit": 4,
-          "checked": 16,
+          "checked": 15,
           "new_explicit": 2,
-          "new_checked": 9
+          "new_checked": 8
         },
         "math.ST": {
           "total": 51,
@@ -747,10 +747,10 @@
           "total": 609,
           "new": 382,
           "revised": 227,
-          "explicit": 152,
-          "checked": 540,
+          "explicit": 150,
+          "checked": 536,
           "new_explicit": 114,
-          "new_checked": 373
+          "new_checked": 372
         },
         "math.AC": {
           "total": 12,
@@ -774,8 +774,8 @@
           "total": 80,
           "new": 48,
           "revised": 32,
-          "explicit": 23,
-          "checked": 77,
+          "explicit": 22,
+          "checked": 75,
           "new_explicit": 15,
           "new_checked": 48
         },
@@ -793,7 +793,7 @@
           "new": 8,
           "revised": 3,
           "explicit": 4,
-          "checked": 11,
+          "checked": 10,
           "new_explicit": 3,
           "new_checked": 8
         },
@@ -801,8 +801,8 @@
           "total": 66,
           "new": 49,
           "revised": 17,
-          "explicit": 21,
-          "checked": 62,
+          "explicit": 20,
+          "checked": 61,
           "new_explicit": 18,
           "new_checked": 49
         },
@@ -847,7 +847,7 @@
           "new": 16,
           "revised": 12,
           "explicit": 6,
-          "checked": 26,
+          "checked": 25,
           "new_explicit": 4,
           "new_checked": 15
         },
@@ -937,9 +937,9 @@
           "new": 29,
           "revised": 26,
           "explicit": 13,
-          "checked": 43,
+          "checked": 42,
           "new_explicit": 9,
-          "new_checked": 28
+          "new_checked": 27
         },
         "math.NA": {
           "total": 36,
@@ -982,9 +982,9 @@
           "new": 42,
           "revised": 27,
           "explicit": 16,
-          "checked": 60,
+          "checked": 59,
           "new_explicit": 13,
-          "new_checked": 41
+          "new_checked": 40
         },
         "math.QA": {
           "total": 12,
@@ -999,8 +999,8 @@
           "total": 21,
           "new": 11,
           "revised": 10,
-          "explicit": 8,
-          "checked": 21,
+          "explicit": 7,
+          "checked": 20,
           "new_explicit": 7,
           "new_checked": 11
         },
@@ -1026,8 +1026,8 @@
           "total": 10,
           "new": 7,
           "revised": 3,
-          "explicit": 4,
-          "checked": 10,
+          "explicit": 3,
+          "checked": 9,
           "new_explicit": 3,
           "new_checked": 7
         },
@@ -1050,9 +1050,9 @@
           "new": 392,
           "revised": 255,
           "explicit": 175,
-          "checked": 638,
+          "checked": 637,
           "new_explicit": 120,
-          "new_checked": 387
+          "new_checked": 386
         },
         "math.AC": {
           "total": 6,
@@ -1284,9 +1284,9 @@
           "new": 35,
           "revised": 29,
           "explicit": 19,
-          "checked": 64,
+          "checked": 63,
           "new_explicit": 12,
-          "new_checked": 35
+          "new_checked": 34
         },
         "math.QA": {
           "total": 15,
@@ -1352,9 +1352,9 @@
           "new": 326,
           "revised": 204,
           "explicit": 98,
-          "checked": 397,
+          "checked": 396,
           "new_explicit": 93,
-          "new_checked": 324
+          "new_checked": 323
         },
         "math.AC": {
           "total": 15,
@@ -1406,9 +1406,9 @@
           "new": 42,
           "revised": 24,
           "explicit": 15,
-          "checked": 53,
+          "checked": 52,
           "new_explicit": 12,
-          "new_checked": 42
+          "new_checked": 41
         },
         "math.CT": {
           "total": 4,
@@ -1955,10 +1955,10 @@
           "total": 719,
           "new": 476,
           "revised": 243,
-          "explicit": 102,
-          "checked": 397,
-          "new_explicit": 102,
-          "new_checked": 397
+          "explicit": 101,
+          "checked": 396,
+          "new_explicit": 101,
+          "new_checked": 396
         },
         "math.AC": {
           "total": 5,
@@ -1991,10 +1991,10 @@
           "total": 15,
           "new": 7,
           "revised": 8,
-          "explicit": 1,
-          "checked": 7,
-          "new_explicit": 1,
-          "new_checked": 7
+          "explicit": 0,
+          "checked": 6,
+          "new_explicit": 0,
+          "new_checked": 6
         },
         "math.CA": {
           "total": 25,
@@ -2009,10 +2009,10 @@
           "total": 99,
           "new": 65,
           "revised": 34,
-          "explicit": 18,
-          "checked": 63,
-          "new_explicit": 18,
-          "new_checked": 63
+          "explicit": 17,
+          "checked": 62,
+          "new_explicit": 17,
+          "new_checked": 62
         },
         "math.CT": {
           "total": 7,
@@ -2257,10 +2257,10 @@
           "total": 1349,
           "new": 874,
           "revised": 475,
-          "explicit": 172,
-          "checked": 597,
-          "new_explicit": 172,
-          "new_checked": 597
+          "explicit": 171,
+          "checked": 596,
+          "new_explicit": 171,
+          "new_checked": 596
         },
         "math.AC": {
           "total": 28,
@@ -2545,10 +2545,10 @@
           "total": 58,
           "new": 36,
           "revised": 22,
-          "explicit": 4,
-          "checked": 14,
-          "new_explicit": 4,
-          "new_checked": 14
+          "explicit": 3,
+          "checked": 13,
+          "new_explicit": 3,
+          "new_checked": 13
         }
       }
     },
@@ -2560,9 +2560,9 @@
           "new": 422,
           "revised": 217,
           "explicit": 126,
-          "checked": 396,
+          "checked": 394,
           "new_explicit": 126,
-          "new_checked": 396
+          "new_checked": 394
         },
         "math.AC": {
           "total": 13,
@@ -2587,9 +2587,9 @@
           "new": 44,
           "revised": 19,
           "explicit": 20,
-          "checked": 44,
+          "checked": 43,
           "new_explicit": 20,
-          "new_checked": 44
+          "new_checked": 43
         },
         "math.AT": {
           "total": 11,
@@ -2605,18 +2605,18 @@
           "new": 14,
           "revised": 0,
           "explicit": 7,
-          "checked": 14,
+          "checked": 13,
           "new_explicit": 7,
-          "new_checked": 14
+          "new_checked": 13
         },
         "math.CO": {
           "total": 103,
           "new": 70,
           "revised": 33,
           "explicit": 25,
-          "checked": 66,
+          "checked": 65,
           "new_explicit": 25,
-          "new_checked": 66
+          "new_checked": 65
         },
         "math.CT": {
           "total": 12,
@@ -2821,9 +2821,9 @@
           "new": 24,
           "revised": 10,
           "explicit": 10,
-          "checked": 24,
+          "checked": 23,
           "new_explicit": 10,
-          "new_checked": 24
+          "new_checked": 23
         },
         "math.SG": {
           "total": 5,
@@ -2862,9 +2862,9 @@
           "new": 1080,
           "revised": 525,
           "explicit": 52,
-          "checked": 196,
+          "checked": 195,
           "new_explicit": 52,
-          "new_checked": 196
+          "new_checked": 195
         },
         "math.AC": {
           "total": 29,
@@ -3096,9 +3096,9 @@
           "new": 111,
           "revised": 61,
           "explicit": 7,
-          "checked": 24,
+          "checked": 23,
           "new_explicit": 7,
-          "new_checked": 24
+          "new_checked": 23
         },
         "math.QA": {
           "total": 27,
@@ -3164,9 +3164,9 @@
           "new": 423,
           "revised": 286,
           "explicit": 52,
-          "checked": 197,
+          "checked": 196,
           "new_explicit": 52,
-          "new_checked": 197
+          "new_checked": 196
         },
         "math.AC": {
           "total": 14,
@@ -3371,9 +3371,9 @@
           "new": 24,
           "revised": 22,
           "explicit": 4,
-          "checked": 11,
+          "checked": 10,
           "new_explicit": 4,
-          "new_checked": 11
+          "new_checked": 10
         },
         "math.OA": {
           "total": 14,
@@ -3425,9 +3425,9 @@
           "new": 19,
           "revised": 9,
           "explicit": 4,
-          "checked": 8,
+          "checked": 7,
           "new_explicit": 4,
-          "new_checked": 8
+          "new_checked": 7
         },
         "math.SG": {
           "total": 6,
@@ -3767,8 +3767,8 @@
           "total": 652,
           "new": 408,
           "revised": 244,
-          "explicit": 191,
-          "checked": 645,
+          "explicit": 190,
+          "checked": 644,
           "new_explicit": 136,
           "new_checked": 408
         },
@@ -4001,8 +4001,8 @@
           "total": 64,
           "new": 36,
           "revised": 28,
-          "explicit": 17,
-          "checked": 63,
+          "explicit": 16,
+          "checked": 62,
           "new_explicit": 11,
           "new_checked": 36
         },
@@ -6485,17 +6485,17 @@
           "total": 677,
           "new": 405,
           "revised": 272,
-          "explicit": 121,
-          "checked": 400,
-          "new_explicit": 121,
-          "new_checked": 400
+          "explicit": 168,
+          "checked": 597,
+          "new_explicit": 122,
+          "new_checked": 405
         },
         "math.AC": {
           "total": 13,
           "new": 6,
           "revised": 7,
-          "explicit": 3,
-          "checked": 6,
+          "explicit": 4,
+          "checked": 11,
           "new_explicit": 3,
           "new_checked": 6
         },
@@ -6503,17 +6503,17 @@
           "total": 55,
           "new": 32,
           "revised": 23,
-          "explicit": 10,
-          "checked": 31,
-          "new_explicit": 10,
-          "new_checked": 31
+          "explicit": 13,
+          "checked": 49,
+          "new_explicit": 11,
+          "new_checked": 32
         },
         "math.AP": {
           "total": 67,
           "new": 41,
           "revised": 26,
-          "explicit": 13,
-          "checked": 41,
+          "explicit": 19,
+          "checked": 63,
           "new_explicit": 13,
           "new_checked": 41
         },
@@ -6521,8 +6521,8 @@
           "total": 15,
           "new": 10,
           "revised": 5,
-          "explicit": 4,
-          "checked": 10,
+          "explicit": 6,
+          "checked": 15,
           "new_explicit": 4,
           "new_checked": 10
         },
@@ -6530,8 +6530,8 @@
           "total": 21,
           "new": 7,
           "revised": 14,
-          "explicit": 2,
-          "checked": 7,
+          "explicit": 6,
+          "checked": 21,
           "new_explicit": 2,
           "new_checked": 7
         },
@@ -6539,8 +6539,8 @@
           "total": 105,
           "new": 64,
           "revised": 41,
-          "explicit": 19,
-          "checked": 64,
+          "explicit": 30,
+          "checked": 96,
           "new_explicit": 19,
           "new_checked": 64
         },
@@ -6548,8 +6548,8 @@
           "total": 6,
           "new": 1,
           "revised": 5,
-          "explicit": 1,
-          "checked": 1,
+          "explicit": 2,
+          "checked": 6,
           "new_explicit": 1,
           "new_checked": 1
         },
@@ -6557,8 +6557,8 @@
           "total": 15,
           "new": 8,
           "revised": 7,
-          "explicit": 4,
-          "checked": 8,
+          "explicit": 6,
+          "checked": 11,
           "new_explicit": 4,
           "new_checked": 8
         },
@@ -6566,8 +6566,8 @@
           "total": 31,
           "new": 22,
           "revised": 9,
-          "explicit": 8,
-          "checked": 22,
+          "explicit": 9,
+          "checked": 28,
           "new_explicit": 8,
           "new_checked": 22
         },
@@ -6575,8 +6575,8 @@
           "total": 36,
           "new": 24,
           "revised": 12,
-          "explicit": 9,
-          "checked": 24,
+          "explicit": 10,
+          "checked": 33,
           "new_explicit": 9,
           "new_checked": 24
         },
@@ -6584,8 +6584,8 @@
           "total": 33,
           "new": 22,
           "revised": 11,
-          "explicit": 7,
-          "checked": 22,
+          "explicit": 9,
+          "checked": 31,
           "new_explicit": 7,
           "new_checked": 22
         },
@@ -6594,7 +6594,7 @@
           "new": 1,
           "revised": 2,
           "explicit": 0,
-          "checked": 1,
+          "checked": 2,
           "new_explicit": 0,
           "new_checked": 1
         },
@@ -6602,8 +6602,8 @@
           "total": 8,
           "new": 5,
           "revised": 3,
-          "explicit": 1,
-          "checked": 5,
+          "explicit": 2,
+          "checked": 8,
           "new_explicit": 1,
           "new_checked": 5
         },
@@ -6611,8 +6611,8 @@
           "total": 12,
           "new": 5,
           "revised": 7,
-          "explicit": 1,
-          "checked": 5,
+          "explicit": 4,
+          "checked": 12,
           "new_explicit": 1,
           "new_checked": 5
         },
@@ -6620,8 +6620,8 @@
           "total": 10,
           "new": 5,
           "revised": 5,
-          "explicit": 3,
-          "checked": 5,
+          "explicit": 5,
+          "checked": 9,
           "new_explicit": 3,
           "new_checked": 5
         },
@@ -6638,8 +6638,8 @@
           "total": 41,
           "new": 22,
           "revised": 19,
-          "explicit": 4,
-          "checked": 22,
+          "explicit": 10,
+          "checked": 33,
           "new_explicit": 4,
           "new_checked": 22
         },
@@ -6648,7 +6648,7 @@
           "new": 4,
           "revised": 3,
           "explicit": 1,
-          "checked": 4,
+          "checked": 6,
           "new_explicit": 1,
           "new_checked": 4
         },
@@ -6657,7 +6657,7 @@
           "new": 6,
           "revised": 8,
           "explicit": 1,
-          "checked": 6,
+          "checked": 13,
           "new_explicit": 1,
           "new_checked": 6
         },
@@ -6665,8 +6665,8 @@
           "total": 7,
           "new": 5,
           "revised": 2,
-          "explicit": 2,
-          "checked": 5,
+          "explicit": 4,
+          "checked": 7,
           "new_explicit": 2,
           "new_checked": 5
         },
@@ -6674,17 +6674,17 @@
           "total": 73,
           "new": 45,
           "revised": 28,
-          "explicit": 16,
-          "checked": 44,
+          "explicit": 18,
+          "checked": 57,
           "new_explicit": 16,
-          "new_checked": 44
+          "new_checked": 45
         },
         "math.NA": {
           "total": 39,
           "new": 22,
           "revised": 17,
-          "explicit": 11,
-          "checked": 22,
+          "explicit": 12,
+          "checked": 34,
           "new_explicit": 11,
           "new_checked": 22
         },
@@ -6692,17 +6692,17 @@
           "total": 52,
           "new": 34,
           "revised": 18,
-          "explicit": 11,
-          "checked": 33,
-          "new_explicit": 11,
-          "new_checked": 33
+          "explicit": 17,
+          "checked": 46,
+          "new_explicit": 12,
+          "new_checked": 34
         },
         "math.OA": {
           "total": 12,
           "new": 7,
           "revised": 5,
-          "explicit": 1,
-          "checked": 7,
+          "explicit": 2,
+          "checked": 11,
           "new_explicit": 1,
           "new_checked": 7
         },
@@ -6710,17 +6710,17 @@
           "total": 68,
           "new": 38,
           "revised": 30,
-          "explicit": 9,
-          "checked": 36,
+          "explicit": 10,
+          "checked": 55,
           "new_explicit": 9,
-          "new_checked": 36
+          "new_checked": 38
         },
         "math.PR": {
           "total": 57,
           "new": 33,
           "revised": 24,
-          "explicit": 9,
-          "checked": 33,
+          "explicit": 11,
+          "checked": 50,
           "new_explicit": 9,
           "new_checked": 33
         },
@@ -6728,8 +6728,8 @@
           "total": 15,
           "new": 8,
           "revised": 7,
-          "explicit": 2,
-          "checked": 8,
+          "explicit": 3,
+          "checked": 13,
           "new_explicit": 2,
           "new_checked": 8
         },
@@ -6737,8 +6737,8 @@
           "total": 17,
           "new": 12,
           "revised": 5,
-          "explicit": 3,
-          "checked": 12,
+          "explicit": 5,
+          "checked": 16,
           "new_explicit": 3,
           "new_checked": 12
         },
@@ -6746,8 +6746,8 @@
           "total": 21,
           "new": 13,
           "revised": 8,
-          "explicit": 4,
-          "checked": 13,
+          "explicit": 5,
+          "checked": 21,
           "new_explicit": 4,
           "new_checked": 13
         },
@@ -6755,8 +6755,8 @@
           "total": 5,
           "new": 2,
           "revised": 3,
-          "explicit": 1,
-          "checked": 2,
+          "explicit": 2,
+          "checked": 5,
           "new_explicit": 1,
           "new_checked": 2
         },
@@ -6764,8 +6764,8 @@
           "total": 16,
           "new": 7,
           "revised": 9,
-          "explicit": 4,
-          "checked": 7,
+          "explicit": 7,
+          "checked": 16,
           "new_explicit": 4,
           "new_checked": 7
         },
@@ -6773,10 +6773,10 @@
           "total": 34,
           "new": 23,
           "revised": 11,
-          "explicit": 5,
-          "checked": 22,
+          "explicit": 8,
+          "checked": 27,
           "new_explicit": 5,
-          "new_checked": 22
+          "new_checked": 23
         }
       }
     }
